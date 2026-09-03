@@ -1,0 +1,6 @@
+{
+  "name": "Car Fault Diagnosis Chat",
+  "description": "AI-powered diagnostic and workshop assistant for Pakistani cars and motorcycles, featuring symptom analysis, verified mechanic directories across major cities, blueprints, local PKR parts and labor rates, and vehicle maintenance logs with oil change intervals and mileage checkup reminders.",
+  "requestFramePermissions": ["geolocation"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

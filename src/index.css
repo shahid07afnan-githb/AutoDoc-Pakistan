@@ -1,0 +1,215 @@
+@import "tailwindcss";
+
+@theme {
+  --color-neutral-950: var(--app-neutral-950);
+  --color-neutral-900: var(--app-neutral-900);
+  --color-neutral-800: var(--app-neutral-800);
+  --color-neutral-700: var(--app-neutral-700);
+  --color-neutral-600: var(--app-neutral-600);
+  --color-neutral-500: var(--app-neutral-500);
+  --color-neutral-400: var(--app-neutral-400);
+  --color-neutral-300: var(--app-neutral-300);
+  --color-neutral-200: var(--app-neutral-200);
+  --color-neutral-100: var(--app-neutral-100);
+  --color-white: var(--app-white);
+  --color-amber-300: var(--app-accent-300);
+  --color-amber-400: var(--app-accent-400);
+  --color-amber-500: var(--app-accent-500);
+  --color-amber-600: var(--app-accent-600);
+}
+
+:root,
+[data-theme="light"] {
+  /* PRECISION AUTOMOTIVE LIGHT THEME (Recommended Default) */
+  --app-neutral-950: #f8fafc; /* Canvas background (Slate 50) */
+  --app-neutral-900: #ffffff; /* Primary card / panel surfaces (Pure White) */
+  --app-neutral-850: #f1f5f9; /* Elevated controls (Slate 100) */
+  --app-neutral-800: #e2e8f0; /* Subtle borders & dividers (Slate 200) */
+  --app-neutral-700: #cbd5e1; /* Hover borders & controls (Slate 300) */
+  --app-neutral-600: #94a3b8; /* Muted borders & disabled state (Slate 400) */
+  --app-neutral-500: #64748b; /* Secondary helper text & icons (Slate 500) */
+  --app-neutral-400: #475569; /* Body secondary text (Slate 600) */
+  --app-neutral-300: #334155; /* Body primary text (Slate 700) */
+  --app-neutral-200: #1e293b; /* Section headers & buttons (Slate 800) */
+  --app-neutral-100: #0f172a; /* High-contrast titles (Slate 900) */
+  --app-white: #0f172a;       /* In light mode, elements marked text-white become Slate-900 */
+  
+  /* Precision Racing Amber / Bronze (High Contrast on White) */
+  --app-accent-300: #b45309;
+  --app-accent-400: #c2410c; /* High visibility accessible tone */
+  --app-accent-500: #ea580c;
+  --app-accent-600: #9a3412;
+
+  --bg-primary: #f8fafc;
+  --bg-surface: #ffffff;
+  --bg-surface-elevated: #f1f5f9;
+  --border-subtle: #e2e8f0;
+  --border-focus: #2563eb;
+  --grid-dot: #cbd5e1;
+
+  --card-shadow: 0 1px 3px 0 rgba(15, 23, 42, 0.05), 0 1px 2px -1px rgba(15, 23, 42, 0.05);
+}
+
+[data-theme="dark"] {
+  /* MIDNIGHT TITANIUM DARK THEME */
+  --app-neutral-950: #090b0e;
+  --app-neutral-900: #11141a;
+  --app-neutral-850: #181d26;
+  --app-neutral-800: #1f2530;
+  --app-neutral-700: #2d3545;
+  --app-neutral-600: #4b5563;
+  --app-neutral-500: #9ca3af;
+  --app-neutral-400: #cbd5e1;
+  --app-neutral-300: #e2e8f0;
+  --app-neutral-200: #f1f5f9;
+  --app-neutral-100: #f8fafc;
+  --app-white: #ffffff;
+
+  --app-accent-300: #fde047;
+  --app-accent-400: #fbbf24;
+  --app-accent-500: #f59e0b;
+  --app-accent-600: #d97706;
+
+  --bg-primary: #090b0e;
+  --bg-surface: #11141a;
+  --bg-surface-elevated: #1a1f28;
+  --border-subtle: #1f2530;
+  --border-focus: #f59e0b;
+  --grid-dot: #1f2530;
+
+  --card-shadow: none;
+}
+
+[data-theme="cobalt"] {
+  /* ELECTRIC MOTORSPORT COBALT (High-Tech Racing Navy) */
+  --app-neutral-950: #050811;
+  --app-neutral-900: #0c1222;
+  --app-neutral-850: #121a30;
+  --app-neutral-800: #1a2542;
+  --app-neutral-700: #293863;
+  --app-neutral-600: #44588e;
+  --app-neutral-500: #7a92cf;
+  --app-neutral-400: #adc1ee;
+  --app-neutral-300: #d5e2fb;
+  --app-neutral-200: #edf2fe;
+  --app-neutral-100: #ffffff;
+  --app-white: #ffffff;
+
+  --app-accent-300: #67e8f9;
+  --app-accent-400: #38bdf8;
+  --app-accent-500: #0ea5e9;
+  --app-accent-600: #0284c7;
+
+  --bg-primary: #050811;
+  --bg-surface: #0c1222;
+  --bg-surface-elevated: #141c33;
+  --border-subtle: #1a2542;
+  --border-focus: #38bdf8;
+  --grid-dot: #1a2542;
+
+  --card-shadow: none;
+}
+
+@layer base {
+  body {
+    background-color: var(--bg-primary);
+    color: var(--app-neutral-300);
+    font-family: 'Outfit', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    transition: background-color 0.25s cubic-bezier(0.4, 0, 0.2, 1), color 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+}
+
+/* Custom subtle carbon weave pattern for header/accents */
+.carbon-grid-bg {
+  background-color: var(--bg-primary);
+  background-image: radial-gradient(var(--grid-dot) 1px, transparent 1px);
+  background-size: 16px 16px;
+}
+
+/* Custom sleek scrollbar for chat log */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-primary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--app-neutral-700);
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--app-neutral-600);
+}
+
+/* Markdown styling inside assistant response cards */
+.markdown-content p {
+  margin-bottom: 0.75rem;
+  line-height: 1.65;
+}
+
+.markdown-content p:last-child {
+  margin-bottom: 0;
+}
+
+.markdown-content ul, 
+.markdown-content ol {
+  margin-left: 1.25rem;
+  margin-bottom: 0.75rem;
+  line-height: 1.6;
+}
+
+.markdown-content li {
+  margin-bottom: 0.35rem;
+  list-style-type: disc;
+}
+
+.markdown-content strong {
+  color: var(--app-accent-400);
+  font-weight: 600;
+}
+
+.markdown-content h1,
+.markdown-content h2,
+.markdown-content h3,
+.markdown-content h4 {
+  font-weight: 700;
+  color: var(--app-neutral-100);
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+  font-family: 'Chakra Petch', sans-serif;
+  letter-spacing: 0.025em;
+}
+
+.markdown-content blockquote {
+  border-left: 3px solid var(--app-accent-400);
+  padding-left: 0.75rem;
+  margin: 0.75rem 0;
+  color: var(--app-neutral-300);
+  background: var(--bg-surface-elevated);
+  border-radius: 0 6px 6px 0;
+  padding-top: 0.35rem;
+  padding-bottom: 0.35rem;
+}
+
+/* Ensure solid action buttons maintain white text in light mode */
+[data-theme="light"] button.bg-amber-500,
+[data-theme="light"] button.bg-emerald-600,
+[data-theme="light"] button.bg-blue-600,
+[data-theme="light"] a.bg-emerald-600,
+[data-theme="light"] a.bg-blue-600,
+[data-theme="light"] .badge-contrast-white {
+  color: #ffffff !important;
+}
+
+[data-theme="light"] #send-diagnostic-message-btn {
+  background-color: #0f172a !important;
+  color: #ffffff !important;
+}
+
+[data-theme="light"] #send-diagnostic-message-btn:hover {
+  background-color: #1e293b !important;
+}
